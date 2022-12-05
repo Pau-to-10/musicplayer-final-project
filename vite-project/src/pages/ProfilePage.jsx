@@ -1,9 +1,10 @@
 import React from 'react'
-import {InputProfile, Input2Profile, Footer, IconFooter} from '../ui/probando';
+import {InputProfile, Input2Profile, Footer, IconFooter, LogoProfile, UserProfile,UserImg, BtnEdit} from '../ui/probando';
 import {Button, } from '../ui/Buttons.style'
 import {GridRegisterLogin } from '../ui/Gridstyle'
 import {Img, Img2} from '../ui/Img'
-import logo from "../assets/images/SpotifyVector.png";
+import logo from "../assets/img/SpotifyVector.png";
+import user from "../assets/img/user.png";
 
 
 export const ProfilePage = () => {
@@ -11,6 +12,13 @@ export const ProfilePage = () => {
     
       <GridRegisterLogin>
         
+        <UserProfile>
+          <UserImg><img src={user} alt="Logo" /></UserImg>
+        <BtnEdit>Edit Profile</BtnEdit>
+      </UserProfile>
+      
+        <LogoProfile><img src={logo} alt="Logo" /></LogoProfile>
+       
         <InputProfile placeholder='user@mail.com'/>
         <Input2Profile placeholder='Username'/>
       
