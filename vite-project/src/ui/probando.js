@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Frame = styled.form`
+export const Frame = styled.div`
     display: absolute;
 	//width: 140.05px;
 	//height: 178px;
