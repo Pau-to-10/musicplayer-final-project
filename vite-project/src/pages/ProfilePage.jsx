@@ -4,7 +4,7 @@ import {Button, } from '../ui/Buttons.style'
 import {GlobalStyle } from '../ui/globalStyles'
 import {Img, Img2} from '../ui/Img'
 import logo from "../assets/img/SpotifyVector.png";
-import user from "../assets/img/user.png";
+
 
 
 export const ProfilePage = () => {
