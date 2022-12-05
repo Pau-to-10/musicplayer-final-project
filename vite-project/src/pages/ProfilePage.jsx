@@ -4,6 +4,7 @@ import {Button, } from '../ui/Buttons.style'
 import {GlobalStyle } from '../ui/globalStyles'
 import {Img, Img2} from '../ui/Img'
 import logo from "../assets/img/SpotifyVector.png";
+import { HomeNavBar } from '../components/HomeNavBar';
 
 
 
@@ -23,7 +24,7 @@ export const ProfilePage = () => {
         <Input2Profile placeholder='Username'/>
       
         <Button>Logout</Button>
-        <Footer><IconFooter>  <img src={logo} alt="Logo" /></IconFooter></Footer>
+        <HomeNavBar/>
     </>
   
 
