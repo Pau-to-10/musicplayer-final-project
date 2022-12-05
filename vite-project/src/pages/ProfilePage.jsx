@@ -1,5 +1,5 @@
 import React from 'react'
-import {InputProfile, Input2Profile, Footer, IconFooter, LogoProfile, UserProfile,UserImg, BtnEdit} from '../ui/probando';
+import {InputProfile, Input2Profile, Footer, IconFooter, LogoProfile, UserProfile,UserImg, BtnEdit, Texto} from '../ui/probando';
 import {Button, } from '../ui/Buttons.style'
 import {GridRegisterLogin } from '../ui/Gridstyle'
 import {Img, Img2} from '../ui/Img'
@@ -13,8 +13,8 @@ export const ProfilePage = () => {
       <GridRegisterLogin>
         
         <UserProfile>
-          <UserImg><img src={user} alt="Logo" /></UserImg>
-        <BtnEdit>Edit Profile</BtnEdit>
+          <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+        <BtnEdit><Texto>Edit Profile</Texto></BtnEdit>
       </UserProfile>
       
         <LogoProfile><img src={logo} alt="Logo" /></LogoProfile>

@@ -12,7 +12,7 @@ width: 334px;
 height: 80px;
 
 left: 53px;
-top: 260px;
+top: 356px;
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
@@ -32,7 +32,7 @@ width: 334px;
 height: 80px;
 
 left: 53px;
-top: 360px;
+top: 452px;
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
@@ -81,11 +81,11 @@ height: 178px;
 left: 139px;
 top: 119px;
 
-background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+color: white;
 `
 
-export const UserImg = styled.div`
+export const UserImg = styled.img`
 position: absolute;
 width: 111.11px;
 height: 111.14px;
@@ -100,18 +100,26 @@ border-radius: 54px;
 
 export const BtnEdit =  styled.button`
 
-position: absolute;
-width: 59.63px;
-height: 14.46px;
-left: 45px;
-top: 150px;
 
+box-sizing: border-box;
+
+position: absolute;
+width: 94.87px;
+height: 28.01px;
+left: 28px;
+top: 143px;
+
+background: #64C27B;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40.6599px
+;`
+
+export const Texto = styled.div`
 font-family: 'Avenir Next';
 font-style: normal;
 font-weight: 700;
 font-size: 10.8426px;
 line-height: 15px;
-/* identical to box height */
 
-
-color: #FFFFFF;`
+color: white`
