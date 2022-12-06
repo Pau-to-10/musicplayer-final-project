@@ -1,14 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { navBarData } from "../utils/navBarData";
-
-import styled from "styled-components";
-import { GlobalStyle } from "../styles/globalStyles";
-import { Footer } from "../styles/model";
+import { ResponsiveStyles } from '../ui/homegrid/ResponsiveStyles'
+import { WrapperNav } from '../ui'
 
 export const HomeNavBar = () => {
   return (
     <>
-      <GlobalStyle />
+      <ResponsiveStyles />
       <WrapperNav>
         {navBarData.map((item, index) => {
           return (
@@ -25,27 +23,3 @@ export const HomeNavBar = () => {
     </>
   );
 };
-
-const WrapperNav = styled.div`
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-
-  .navbar {
-    padding: 0;
-    margin-top: 3px;
-    font-size: 45px;
-    cursor: pointer;
-  }
-
-  .navbar li a {
-    color: #9bfab0;
-  }
-
-  .active {
-    border-top: 7px solid #9bfab0;
-    border-radius: 5px;
-  }
-`;

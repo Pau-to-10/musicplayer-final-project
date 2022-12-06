@@ -5,7 +5,7 @@ import { FaUserAlt } from "react-icons/fa";
 export const navBarData = [
   {
     title: "Home",
-    path: "/",
+    path: "/userhome",  //en vez de home¿?
     icon: <AiFillHome />,
   },
   {
@@ -20,7 +20,7 @@ export const navBarData = [
   },
   {
     title: "Profile",
-    path: "/profile",
+    path: "/profile", //la de editar perfil
     icon: <FaUserAlt />,
   },
 ];

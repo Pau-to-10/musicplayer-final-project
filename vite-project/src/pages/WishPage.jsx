@@ -1,10 +1,10 @@
 import { HomeNavBar } from '../components/HomeNavBar';
 import { Down } from '../ui'
 
-export const SearchPage = () => {
+export const WishPage = () => {
   return (
     <>
-      <div>SearchPage</div>
+      <div>WishPage</div>
       <Down className="abajo">
         <HomeNavBar />
       </Down>

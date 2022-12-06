@@ -1,36 +1,47 @@
-import React from 'react'
-import {InputProfile, Input2Profile, Footer, IconFooter, LogoProfile, UserProfile,UserImg, BtnEdit, Texto} from '../ui/probando';
-import {Button, } from '../ui/Buttons.style'
-import {GlobalStyle } from '../ui/globalStyles'
-import {Img, Img2} from '../ui/Img'
-import logo from "../assets/img/SpotifyVector.png";
 import { HomeNavBar } from '../components/HomeNavBar';
-
-
+import facebook from '../assets/img/face.png'
+import { ResponsiveStyles } from '../ui/homegrid/ResponsiveStyles'
+import { MdArrowBackIos } from "react-icons/md";
+import { Container, Sidebar, Header, IconBack, Button, Column, Widget, Input, UserImg, BtnEdit, Down } from '../ui'
+import { Link } from 'react-router-dom';
 
 export const ProfilePage = () => {
-  return (
-    <>
-        <GlobalStyle />
-        
-        <UserProfile>
-          <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-        <BtnEdit><Texto>Edit Profile</Texto></BtnEdit>
-      </UserProfile>
-      
-        <LogoProfile><img src={logo} alt="Logo" /></LogoProfile>
-       
-        <InputProfile placeholder='user@mail.com'/>
-        <Input2Profile placeholder='Username'/>
-      
-        <Button>Logout</Button>
-        <HomeNavBar/>
-    </>
-  
+    return (
+        <>
+            <ResponsiveStyles />
+            <Container className='contenedor'>
 
-      
-    
-  )
+                <Header className="header">
+                    <Link to="/userhome"><IconBack><MdArrowBackIos /></IconBack></Link>
+                    <center><img src={facebook} alt="icon" width="30" /></center>
+                </Header>
+
+                <Sidebar className="aside">
+                    <Column>
+                        <Input placeholder='user@mail.com' />
+                        <Input placeholder='Username' />
+                        <Button type="input">Logout</Button>
+                    </Column>
+                </Sidebar>
+
+                <Widget className="widget-1">
+                    <Column>
+                        <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+                        <BtnEdit>Edit Profile</BtnEdit>
+                    </Column>
+                </Widget>
+
+                <Down className="abajo">
+                    <HomeNavBar />
+                </Down>
+
+            </Container>
+        </>
+
+
+
+
+    )
 }
 
 
