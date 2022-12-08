@@ -1,3 +1,4 @@
+import {useForm} from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import facebook from '../../assets/img/face.png'
 import { Container, Header, Widget, Column, Sidebar, Button, Input, IconBack, Textsmall } from '../../ui'
@@ -5,6 +6,14 @@ import { ResponsiveStyles } from '../../ui/homegrid/responsiveStyles'
 import { MdArrowBackIos } from "react-icons/md";
 
 export const AuthLoginPage = () => {
+
+const {register, handleSubmit, formState: { errors, isSubmitted }} = useForm();
+
+const onSubmit = data => console.log(data);
+
+console.log('Error', errors);
+console.log('Submitted', isSubmitted);
+
     return (
         <>
             <ResponsiveStyles />
@@ -19,10 +28,17 @@ export const AuthLoginPage = () => {
                     <Column>
                         <h1>Sign In</h1>
                         <p>If you need any support <Link to="/support">Click here</Link></p>
-                        <form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <Column>
-                                <Input placeholder="Enter username or email" />
-                                <Input placeholder="Enter password" />
+                                <Input  type="email" placeholder="Enter email" {...register("email", {required: true})} />
+                                <Input type="password" placeholder="Enter password" {...register("password", {
+                                    minLegth: {
+                                    value: 4,
+                                    message: 'asi no' 
+                                    // /^[A-Za-z0-9]+$/i
+                                },
+                                    required: true})} />
+                                {errors.password && <p>{errors.password?.message}</p>}
                                 <Link to="/recoverypass"> Recovery password</Link>
                                 <Button type="input">Sign In</Button>
                             </Column>
