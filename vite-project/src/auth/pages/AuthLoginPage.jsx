@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import facebook from '../../assets/img/face.png'
-import { Container, Header, Widget, Column, Sidebar, Button, Input, IconBack } from '../../ui'
+import { Container, Header, Widget, Column, Sidebar, Button, Input, IconBack, Textsmall } from '../../ui'
 import { ResponsiveStyles } from '../../ui/homegrid/responsiveStyles'
 import { MdArrowBackIos } from "react-icons/md";
 
@@ -32,13 +32,13 @@ export const AuthLoginPage = () => {
 
                 <Sidebar className="aside">
                     <Column>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
-                        <p>blanlanlalbablbas</p>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
+                        <Textsmall>blanlanlalbablbas</Textsmall>
                     </Column>
                 </Sidebar>
 
