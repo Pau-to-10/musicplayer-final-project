@@ -14,12 +14,11 @@ const {register, handleSubmit, formState: { errors, isSubmitted }} = useForm();
 
 //const onSubmit = data => console.log(data);
 
-console.log('Error', errors);
-console.log('Submitted', isSubmitted);
+//console.log('Error', errors);
+//console.log('Submitted', isSubmitted);
 
 
-
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
 const { user, setUser, dataUser, setDataUser } = useContext(UserContext);
 
@@ -34,7 +33,7 @@ useEffect(() => {
 }, [user])
 
 const fetchDatauser = async () => {
-  const petiApi = await fetch('http://localhost:4000/users');
+  const petiApi = await fetch('http://localhost:4000/user');
   const data = await petiApi.json();
   setDataUser(data)
 }
@@ -67,7 +66,7 @@ const onSubmit = (e) => {
     //navigate("/start");
   } else {
     alert('Unregistered user, or incorrect data')
-    navigate("/");
+    //navigate("/");
   }
 }
 
@@ -86,19 +85,13 @@ const onSubmit = (e) => {
                     <Column>
                         <h1>Sign In</h1>
                         <p>If you need any support <Link to="/support">Click here</Link></p>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit}>
                             <Column>
                                 <Input  type="email" placeholder="Enter email" {...register("email", {required: true})} />
-                                <Input type="password" placeholder="Enter password" {...register("password", {
-                                    minLegth: {
-                                    value: 4,
-                                    message: 'asi no' 
-                                    // /^[A-Za-z0-9]+$/i
-                                },
-                                    required: true})} />
+                                <Input type="password" placeholder="Enter password" {...register("password")} />
                                 {errors.password && <p>{errors.password?.message}</p>}
                                 <Link to="/recoverypass"> Recovery password</Link>
-                                <Button type="input">Sign In</Button>
+                                <Button type="submit">Sign In</Button>
                             </Column>
                         </form>
                     </Column>
