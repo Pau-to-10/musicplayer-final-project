@@ -1,7 +1,0 @@
-export * from "./Form"
-export * from "./Gridstyle"
-export * from "./Img"
-export * from "./TextStyle"
-export * from "./globalStyles"
-export * from "./model"
-export * from "./LinkStyles"

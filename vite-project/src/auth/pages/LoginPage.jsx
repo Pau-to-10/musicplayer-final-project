@@ -1,53 +1,69 @@
-import icono from '../../assets/img/icono.png'
-import facebook from '../../assets/img/face.png'
-import { Header, Sidebar, Container, Widget, IconBack, Title, Textsmall, Spam, Column, Input, Button, Footer, Main } from '../../ui'
-
+import { useContext } from "react";
+import { useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
+  const { loginState, setLoginState } = useContext(AuthContext);
 
-    return (
-        <Container className="contenedor">
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
 
-            <Header className="header">
+    useEffect(() => {
+      let interin = JSON.parse(localStorage.getItem("users"));
+      fetchDatauser();
+      setLoginState(interin);
+    }, []);
 
-                <IconBack>back</IconBack><img src={facebook} alt="icon" width="30" /> {/* LINK en back */}
-            </Header>
+    useEffect(() => {
+      localStorage.setItem("users", JSON.stringify(user));
+    }, [user]);
 
-            <Main className="contenido">
-                <Title><img src={icono} width="30px"/></Title>
-                <Title> Sign In</Title>
-                <Textsmall>If you need any support <Spam green>Click here</Spam></Textsmall> {/* LINK */}
-            </Main>
+    const fetchDatauser = async () => {
+      const fetchApi = await fetch("http://localhost:4000/users");
+      const data = await fetchApi.json();
+      setLoginState(data);
+    };
 
-           
-            <Widget className="widget-1">
-                <Column>
-                <Input placeholder="Enter username or email" />
-                    <Input placeholder="Password" />
-                     <Textsmall>Recovery password</Textsmall> {/* LINK */}
-                </Column>
-            </Widget>
-            <Widget className="widget-2">
-                <Column>
-                    <Button type="input">Sign In</Button>
-                    
-                </Column>
-            </Widget>
-            <Footer className="footer">
-            <Column>
-                    
-                    <Textsmall>or sign in with</Textsmall>
-                    <div>
-                        <img src={facebook} alt="icon" width="30" />
-                        <img src={facebook} alt="icon" width="30" />
-                        <img src={facebook} alt="icon" width="30" />
-                    </div>
-                </Column><Textsmall> Not a member ? <Spam >Register now</Spam></Textsmall></Footer> {/* LINK */}
+    const userData = {
+      username: e.target.userName.value,
+      pass: e.target.userPass.value,
+    };
+    // console.log({ userData });
 
+    const interim = dataUser.find(
+      (user) =>
+        userData.email === user.email && userData.password === user.password
+    );
 
-            
-        </Container>
-    )
-}
-
-
+    if (interim) {
+      //console.log(interim)
+      setLoginState(interim);
+      alert("User registered successfully");
+    } else {
+      alert("Unregistered user, or incorrect data");
+      navigate("/");
+    }
+  };
+};
+return (
+  <>
+    <h1 className="text-center text-white">Login page</h1>
+    <form onSubmit={handleOnSubmit}>
+      <input
+        type="text"
+        name="userName"
+        className="form-control"
+        placeholder="Tu nombre"
+      />
+      <input
+        type="text"
+        name="userPass"
+        className="form-control"
+        placeholder="Tu password"
+      />
+      <button type="submit" className="btn btn-success">
+        Send
+      </button>
+    </form>
+  </>
+);

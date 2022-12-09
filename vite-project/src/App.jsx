@@ -1,14 +1,16 @@
-import { BrowserRouter } from "react-router-dom";
-
-import Router from "./router/Router";
-import { GlobalStyle } from "./ui/globalStyles";
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { LoginPage } from "./auth/pages/LoginPage";
+import { AuthProvider } from "./auth/context/AuthProvider";
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Router />
-    </>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />;
+        <Route path="/login" element={<LoginPage />} />;
+      </Routes>
+    </AuthProvider>
   );
 }
 
