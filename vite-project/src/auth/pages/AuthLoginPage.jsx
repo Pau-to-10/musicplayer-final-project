@@ -1,7 +1,7 @@
 import {useForm} from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import facebook from '../../assets/img/face.png'
-import { Container, Header, Widget, Column, Sidebar, Button, Input, IconBack, Textsmall } from '../../ui'
+import { Container, Header, Widget, Column, Sidebar, Button, Input, IconBack, Textsmall, Down } from '../../ui'
 import { ResponsiveStyles } from '../../ui/homegrid/responsiveStyles'
 import { MdArrowBackIos } from "react-icons/md";
 import { useEffect } from 'react'
@@ -116,15 +116,15 @@ const onSubmit = (e) => {
                     </Column>
                 </Sidebar>
 
-                {/* <Widget className='widget-2'>
+                <Down className='abajo'>
 
                     <p>or sign in with</p>
                     <img src={facebook} alt="icon" width="30" />
                     <img src={facebook} alt="icon" width="30" />
                     <img src={facebook} alt="icon" width="30" />
 
-                    <footer><h6> Not a member ? <Link to="/register"><p>Register now</p></Link></h6></footer> {/* LINK */}
-                {/* </Widget> */} 
+                    <footer><h6> Not a member ? <Link to="/register"><p>Register now</p></Link></h6></footer>
+                </Down> 
                 
             </Container>
         </>
