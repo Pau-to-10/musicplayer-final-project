@@ -6,10 +6,36 @@ import { Form } from "../ui/Form";
 export const RegisterForm = () => {
 
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+
+        //2.fetch post
+        (async () => {
+            const rawResponse = await fetch('http://localhost:4000/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                //1.recoger info del formulario
+                body: JSON.stringify({
+                    name: e.target.userName.value,
+                    firstName: e.target.first_name.value,
+                    lastName: e.target.last_name.value,
+                    email: e.target.email.value,
+                    address: e.target.address.value,
+                    password: e.target.password.value,
+                    confirmPassword: e.target.confirmPassword.value
+                })
+            });
+            const content = await rawResponse.json();
+            console.log(content);
+        })()
+            ;
+    }
 
 
 
-  
+
   // const {
   //   register,
   //   handleSubmit,
@@ -36,7 +62,7 @@ export const RegisterForm = () => {
   // }
   return (
     <>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleOnSubmit}>
         {/* register your input into the hook by invoking the "register" function */}
         {/* <InputSmall
           {...register("name", { required: true })}
